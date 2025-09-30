@@ -35,3 +35,8 @@ th {
 tr:hover {
   background: #f0f3f7;
 }
+
+td:nth-child(6) { /* supondo que Qualis seja a 6ª coluna */
+  font-size: 0.85rem;
+  color: #1e3a8a;
+}

@@ -61,7 +61,8 @@ async function renderTable() {
         date: latest.date,
         deadline: latest.deadline,
         deadlineStr: latest.timeline?.[0]?.deadline,
-        link: latest.link
+        link: latest.link,
+        rank: meta.rank
       });
     } catch (e) {
       console.error("Erro carregando", file, e);
@@ -80,6 +81,11 @@ async function renderTable() {
       <td>${conf.place || "-"}</td>
       <td>${conf.date || "-"}</td>
       <td class="deadline-cell" data-deadline="${conf.deadline}"></td>
+      <td>
+        CCF: ${conf.rank?.ccf || "-"}<br>
+        CORE: ${conf.rank?.core || "-"}<br>
+        TH-CPL: ${conf.rank?.thcpl || "-"}
+      </td>
       <td><a href="${conf.link}" target="_blank">🔗 site</a></td>
     `;
     tbody.appendChild(row);
