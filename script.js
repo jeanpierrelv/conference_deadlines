@@ -113,7 +113,11 @@ function startCountdown() {
       const mins = Math.floor((diff / (1000 * 60)) % 60);
       const secs = Math.floor((diff / 1000) % 60);
 
-      cell.textContent = `${days}d ${hours}h ${mins}m ${secs}s`;
+      const deadlineStr = deadline.toLocaleString();
+      cell.innerHTML = `
+      <div><strong>${deadlineStr}</strong></div>
+      <div>${days}d ${hours}h ${mins}m ${secs}s</div>
+      `;
 
       // Cores por urgência
       if (days < 7) cell.style.color = "red";
