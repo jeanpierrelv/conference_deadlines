@@ -1,0 +1,17 @@
+# Conferências de interesse do grupo (aparecem com ⭐ e no filtro "Grupo").
+# Use o campo `title` do ccfddl (ou de extra_conferences.yml). Se houver títulos
+# repetidos em áreas diferentes, use "ÁREA/TÍTULO" (ex.: "SC/SEC").
+nome: IA Research Group, PRISMA — Unesp
+conferencias:
+  - AAAI
+  - AISTATS
+  - BRACIS
+  - CVPR
+  - ESANN
+  - ICLR
+  - ICML
+  - ICRA
+  - IJCAI
+  - IJCNN
+  - NeurIPS
+  - SIBGRAPI

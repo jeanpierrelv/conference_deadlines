@@ -1,0 +1,39 @@
+# Conferências que não estão no ccfddl (ex.: eventos brasileiros da SBC).
+# Mesmo formato dos arquivos do ccfddl (https://github.com/ccfddl/ccf-deadlines/tree/main/conference).
+# Datas no formato 'AAAA-MM-DD HH:MM:SS' no fuso indicado em `timezone`
+# (AoE, UTC, UTC-3, UTC+8, PT...). Use 'TBD' quando o prazo ainda não foi divulgado.
+#
+# Para uma nova edição, acrescente um item em `confs` (o ano mais recente vale);
+# enquanto as datas não saírem, o site mostra uma estimativa baseada na edição anterior.
+
+- title: BRACIS
+  description: Brazilian Conference on Intelligent Systems
+  sub: AI
+  rank: {ccf: N, core: N, thcpl: N}
+  dblp: bracis
+  confs:
+    - year: 2026
+      id: bracis26
+      link: https://bracis.sbc.org.br/2026/bracis/
+      timeline:
+        - abstract_deadline: '2026-04-27 23:59:59'   # prorrogado (original: 13/abr)
+          deadline: '2026-05-04 23:59:59'            # prorrogado (original: 20/abr)
+      timezone: AoE
+      date: October 19-22, 2026
+      place: Cuiabá, MT, Brazil
+
+- title: SIBGRAPI
+  description: Conference on Graphics, Patterns and Images
+  sub: CG
+  rank: {ccf: N, core: N, thcpl: N}
+  dblp: sibgrapi
+  confs:
+    - year: 2026
+      id: sibgrapi26
+      link: https://sibgrapi.sbc.org.br/2026
+      timeline:
+        - deadline: '2026-06-17 23:59:59'            # hard deadline (original: 30/mai); fuso não informado no site
+          comment: Main track
+      timezone: AoE
+      date: September 29 - October 2, 2026
+      place: Goiânia, GO, Brazil

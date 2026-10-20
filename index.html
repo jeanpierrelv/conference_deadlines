@@ -2,37 +2,100 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Deadlines do Grupo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deadlines de Conferências</title>
+  <meta name="description" content="Prazos de submissão de conferências de Computação com rankings Qualis CAPES, CORE e CCF.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
 <body>
-  <h1>📅 Conference Deadlines</h1>
-  <p>Stay updated! - AI/ML conferences of interest to the group 🚀.</p>
+  <header class="page-header">
+    <h1>📅 Deadlines de Conferências</h1>
+    <p class="subtitle">Prazos de submissão de conferências de Computação com <strong>Qualis CAPES</strong>, CORE e CCF.</p>
+    <p class="meta" id="meta">Carregando dados…</p>
+  </header>
 
-  <table id="confTable">
-    <thead>
-      <tr>
-        <th>Conferência</th>
-        <th>Sigla</th>
-        <th>Local</th>
-        <th>Data</th>
-        <th>Deadline</th>
-        <th>Qualis</th>
-        <th>Link</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td colspan="7">Carregando...</td></tr>
-    </tbody>
-  </table>
+  <section class="toolbar" aria-label="Filtros">
+    <div class="row">
+      <input type="search" id="busca" placeholder="Buscar sigla, nome ou local…" aria-label="Buscar">
+      <div class="segmented" role="group" aria-label="Visão">
+        <button type="button" data-visao="todas" aria-pressed="true">Todas</button>
+        <button type="button" data-visao="grupo" aria-pressed="false">⭐ Grupo</button>
+        <button type="button" data-visao="favoritas" aria-pressed="false">♥ Favoritas</button>
+      </div>
+    </div>
+    <div class="row chips" id="areas" role="group" aria-label="Áreas"></div>
+    <div class="row selects">
+      <label>Qualis
+        <select id="f-qualis">
+          <option value="">qualquer</option>
+          <option value="A1">A1</option>
+          <option value="A2">≥ A2</option>
+          <option value="A3">≥ A3</option>
+          <option value="A4">≥ A4</option>
+          <option value="B1">≥ B1</option>
+          <option value="B4">com Qualis</option>
+        </select>
+      </label>
+      <label>CORE
+        <select id="f-core">
+          <option value="">qualquer</option>
+          <option value="A*">A*</option>
+          <option value="A">≥ A</option>
+          <option value="B">≥ B</option>
+        </select>
+      </label>
+      <label>CCF
+        <select id="f-ccf">
+          <option value="">qualquer</option>
+          <option value="A">A</option>
+          <option value="B">≥ B</option>
+          <option value="C">≥ C</option>
+        </select>
+      </label>
+      <label>Ordenar
+        <select id="f-ordem">
+          <option value="prazo">por prazo</option>
+          <option value="qualis">por Qualis</option>
+          <option value="nome">por nome</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="f-todas"> mostrar encerradas / TBD</label>
+      <span class="spacer"></span>
+      <span id="contagem" class="contagem" aria-live="polite"></span>
+      <button type="button" id="exportar" class="btn" title="Baixar os prazos abertos visíveis para o seu calendário">📆 Exportar .ics</button>
+    </div>
+  </section>
 
+  <main>
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th class="col-fav" aria-label="Favorita"></th>
+          <th>Conferência</th>
+          <th>Prazo</th>
+          <th>Evento</th>
+          <th>Rankings</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="6" class="vazio">Carregando…</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>🌐 IA Research Group, PRISMA — Unesp</p>
+    <p>
+      Prazos: <a href="https://github.com/ccfddl/ccf-deadlines" target="_blank" rel="noopener">ccfddl</a> ·
+      Qualis: <a href="https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/sobre-a-avaliacao/areas-avaliacao/sobre-as-areas-de-avaliacao/colegio-de-ciencias-exatas-tecnologicas-e-multidisciplinar/ciencias-exatas-e-da-terra/ciencia-da-computacao" target="_blank" rel="noopener">CAPES — Computação</a>
+      (confira a classificação vigente em <a href="https://qualis.pages.dev/eventos" target="_blank" rel="noopener">qualis.pages.dev</a>)
+    </p>
+    <p class="nota">Horários exibidos no seu fuso local. Prazos “estimados” repetem a data da edição anterior e servem só como referência.</p>
+  </footer>
+
+  <script src="data/conferences.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
-
-<footer>
-    <p>🌐 IA Research Group, PRISMA — Unesp (2025)</p>
-    <p>Source: <a href="https://github.com/ccfddl/ccf-deadlines" target="_blank">ccfddl</a></p>
-</footer>

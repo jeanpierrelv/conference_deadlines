@@ -1,0 +1,41 @@
+# Correspondência entre conferências do ccfddl e siglas da lista Qualis.
+#
+# Por padrão o script casa pela sigla (ignorando maiúsculas, espaços e pontuação).
+# Use este arquivo quando:
+#   - a sigla difere entre as fontes      ->  "SUB/TÍTULO": SIGLA_QUALIS
+#   - a mesma sigla é outro evento        ->  "SUB/TÍTULO": null
+# SUB = área do ccfddl (AI, CG, CT, DB, DS, HI, MX, NW, SC, SE); TÍTULO = campo `title` do ccfddl.
+#
+# Depois de editar, rode `uv run scripts/build_data.py --relatorio` para conferir os casamentos.
+
+# --- siglas diferentes ---
+AI/IEEE CEC: CEC
+AI/FG: FGR
+AI/IJCB: ICB              # IJCB resultou da fusão de ICB e BTAS
+CG/ACM SIGGRAPH: SIGGRAPH
+CG/ACM SIGGRAPH ASIA: SIGGRAPH Asia
+CG/IEEE VR: VR
+CG/IEEE CoG: COG
+DB/ECML-PKDD: ECML
+DB/SIGKDD: KDD            # na lista Qualis, "SIGKDD" (B4) é outra entrada; KDD é A1
+DB/APWeb-WAIM: APWEB
+DS/IEEE/ACM CGO: CGO
+DS/SIGOPS ATC: ATC
+DS/CODES+ISSS: CODES+ISS
+DS/SoCC: ACMSOCC
+DS/PACT: PACTT
+HI/IDC: ACMIDC
+HI/UbiComp/ISWC: UbiComp
+MX/ISMB: ISMB/ECCB
+SC/CSFW: CSF
+SC/ISC: ISW               # Information Security Conference
+SC/SAC: SACRYPT           # Selected Areas in Cryptography
+SC/IFIP WG 11.9: ICDF     # IFIP International Conference on Digital Forensics
+SE/FSE: FSE/ESEC
+SE/ICST: ICSTV
+SE/SAS: ISAS
+
+# --- mesma sigla, evento diferente (sem Qualis) ---
+CG/SPM: null              # Qualis SPM = Signal, Image Processing and Multimedia
+DS/SEC: null              # Qualis SEC = IFIP SEC (segurança), não Edge Computing
+NW/MSN: null              # Qualis MSN = Mobile Ad-Hoc and Sensor Networks
