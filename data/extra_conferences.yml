@@ -37,3 +37,21 @@
       timezone: AoE
       date: September 29 - October 2, 2026
       place: Goiânia, GO, Brazil
+
+- title: MIDL
+  description: Medical Imaging with Deep Learning
+  sub: MX
+  rank: {ccf: N, core: N, thcpl: N}
+  dblp: midl
+  confs:
+    - year: 2027
+      id: midl27
+      link: https://2027.midl.io/
+      timeline:
+        - abstract_deadline: '2026-11-30 23:59:59'
+          deadline: '2026-12-04 23:59:59'
+          comment: Full papers
+        # Short papers: prazo ainda TBD em https://2027.midl.io/important-dates
+      timezone: AoE
+      date: July 14-16, 2027
+      place: Porto, Portugal
