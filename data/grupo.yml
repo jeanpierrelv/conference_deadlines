@@ -3,10 +3,10 @@
 # repetidos em áreas diferentes, use "ÁREA/TÍTULO" (ex.: "SC/SEC").
 nome: IA Research Group, PRISMA — Unesp
 conferencias:
+  # IA / aprendizado de máquina
   - AAAI
   - AISTATS
   - BRACIS
-  - CVPR
   - ESANN
   - ICLR
   - ICML
@@ -14,4 +14,14 @@ conferencias:
   - IJCAI
   - IJCNN
   - NeurIPS
+  # Visão computacional / processamento de imagens
+  - 3DV
+  - ACCV
+  - BMVC
+  - CVPR
+  - ECCV
+  - ICCV
+  - ICIP
+  - ICPR
   - SIBGRAPI
+  - WACV
